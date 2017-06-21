@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/jefflau/redaxe.git"
+    "url": "git+ssh://git@github.com/jefflau/react-redaxe.git"
   },
   "keywords": [
     "state",
