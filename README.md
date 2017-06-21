@@ -15,13 +15,17 @@ $ npm install --save react-redaxe
 
 ## Example
 
-```
+```js
 import { connect } from 'react-redaxe'
+import { db } from 'redaxe'
 
-const Component = ({ handleStateChange }) => <div>
-  <div>{db.get('foo')}</div>
+const Component = ({ handleStateChange, foo }) => <div>
+  <div>{foo}</div>
   <button onClick={handleStateChange}>Change to bar</button>
 </div>
 
-export default connect({handleStateChange}, Component)
+export default connect({
+  handleStateChange,
+  foo: db.get('foo')
+}, Component)
 ```
