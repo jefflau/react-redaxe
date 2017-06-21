@@ -11,7 +11,7 @@ $ npm install --save react-redaxe
 ```
 
 ## API
-* connect - Takes an object which maps any data, whether they are handlers or state to your props. It then returns a component with the new connected component
+* connect - Takes mapToStateToProps function that maps any data, whether they are handlers or state to your props. It then returns a component with the new connected component
 
 ## Example
 
@@ -24,8 +24,8 @@ const Component = ({ handleStateChange, foo }) => <div>
   <button onClick={handleStateChange}>Change to bar</button>
 </div>
 
-export default connect({
+export default connect(db => ({
   handleStateChange,
   foo: db.get('foo')
-}, Component)
+}), Component)
 ```
