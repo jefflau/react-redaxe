@@ -1,9 +1,10 @@
 import React from 'react'
 
-export function connect(Component){
-  return function(mapToProps){
+export function connect(mapToProps){
+  return function(Component){
     let connectedComponent = () => {
-      return <div>{component}</div>
-    return <Component {...mapToProps} />
+      return <Component {...mapToProps} />
+    }
+    return connectedComponent
   }
 }
