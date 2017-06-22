@@ -1,7 +1,8 @@
 # React-Redaxe
 
-Redaxe is a simpler state container for your front-end applications. It is inspired by Redux's global state, but gets rid of the application separate of actions and reducers. Instead the 'Redaxe' way is to import your state directly into each component and whenever you want to update the state, you call the `update` function and give it the new state. To make React compoonents testable, React-Redaxe gives a similar API to Redux, but using a connect function to add your handlers and state to props instead of directly into your component so they stay pure.
+Redaxe is a simpler state container for your front-end applications. It is inspired by Redux's global state, but gets rid of the application separate of actions and reducers. Instead the 'Redaxe' way is to import your state directly into each component and whenever you want to update the state, you call the `update` function and give it the new state. To make React components testable, React-Redaxe gives a similar API to Redux, but using a connect function to add your handlers and state to props instead of directly into your component so they stay pure.
 
+In addition to testability, it also implements [PureComponent](https://facebook.github.io/react/docs/react-api.html#react.purecomponent) which makes shallow comparisons of props to decide whether to re-run the render function. Using [immutable](https://facebook.github.io/immutable-js/) allows you to make quick deep comparisons as well.
 
 
 ## Installation
