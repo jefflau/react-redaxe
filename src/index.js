@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import { db } from 'redaxe'
 
 export function connect(mapToProps){
   return function(Component){
-    let connectedComponent = () => {
-      let props = mapToProps(db)
-      return <Component {...props} />
+    class ShouldUpdateComponent extends PureComponent {
+      render(){
+        let props = this.props
+        return <Component {...props} />
+      }
     }
-    return connectedComponent
+    ConnectedComponent = () => {
+      let props = mapToProps(db)
+      return <ShouldUpdateComponent />
+    }
+    return ConnectedComponent
   }
 }
