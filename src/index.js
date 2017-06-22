@@ -9,9 +9,9 @@ export function connect(mapToProps){
         return <Component {...props} />
       }
     }
-    ConnectedComponent = () => {
+    let ConnectedComponent = () => {
       let props = mapToProps(db)
-      return <ShouldUpdateComponent />
+      return <ShouldUpdateComponent {...props}/>
     }
     return ConnectedComponent
   }
